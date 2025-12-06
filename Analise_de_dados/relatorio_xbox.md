@@ -1,61 +1,59 @@
-# Objetivo do Projeto
-O projeto consiste em analisar dados de assinaturas do Xbox Game Pass e seus complementos (EA Play Season Pass e Minecraft Season Pass) para responder perguntas de negócio e gerar insights sobre faturamento e vendas. Além disso, há um dashboard que resume os principais indicadores.
+## 🎮 Projeto de Análise de Assinaturas Xbox Game Pass 📈
 
-## Estrutura dos Dados
-O arquivo contém quatro abas principais:
+Este projeto visa analisar dados de assinaturas do **Xbox Game Pass** e complementos (EA Play Season Pass, Minecraft Season Pass) para fornecer **insights de negócio** sobre faturamento e vendas, culminando em um **Dashboard** de indicadores principais.
 
-Assets: Paleta de cores e elementos visuais (ícones, logos) para padronização do dashboard.
-Bases: Base de assinantes com colunas como:
+---
 
-Subscriber ID, Name, Plan (Core, Standard, Ultimate)
-Start Date, Auto Renewal (Yes/No)
-Subscription Price, Subscription Type (Monthly, Quarterly, Annual)
-Indicadores de compra de passes adicionais:
+### 📂 Estrutura dos Dados
 
-EA Play Season Pass e seu preço
-Minecraft Season Pass e seu preço
+O arquivo de dados (Excel) está organizado em quatro abas principais:
 
-Coupon Value e Total Value (valor total da assinatura considerando descontos e adicionais)
+* **Assets:** Contém a paleta de cores e elementos visuais (ícones, logos) para a **padronização visual** do Dashboard.
+* **Bases:** É a **fonte principal** de dados de assinantes com as seguintes colunas-chave:
+    * **Identificação:** `Subscriber ID`, `Name`.
+    * **Assinatura Principal:** `Plan` (Core, Standard, Ultimate), `Start Date`, `Auto Renewal` (Yes/No), `Subscription Price`, `Subscription Type` (Monthly, Quarterly, Annual).
+    * **Passes Adicionais:** Indicadores de compra e preços de `EA Play Season Pass` e `Minecraft Season Pass`.
+    * **Financeiro Total:** `Coupon Value` (desconto), `Total Value` (valor total da assinatura, incluindo descontos e adicionais).
+* **Cálculos:** Aba utilizada para responder às **perguntas de negócio** usando **tabelas dinâmicas** (ex: Faturamento total de planos anuais; Faturamento separado por auto renovação; Total de vendas de passes).
+* **Dashboard:** **Visualização consolidada** dos principais indicadores e *insights* (ex: R$ 600,00 EA Play, R$ 940,00 Minecraft).
 
-Cálculos: Respostas às perguntas de negócio com tabelas dinâmicas, por exemplo:
+---
 
-Faturamento total de planos anuais
-Faturamento separado por auto renovação
-Total de vendas de EA Play e Minecraft Season Pass
+### ❓ Perguntas de Negócio Respondidas
 
-Dashboard: Visualização consolidada com indicadores principais (ex.: R$ 600,00 EA Play, R$ 940,00 Minecraft). [0120950e-6...22ed198c69 | Excel]
+As análises visam responder às seguintes questões de faturamento e vendas:
 
+* **Pergunta 1:** Qual o **faturamento total** de vendas de **planos anuais**?
+* **Pergunta 2:** Qual o **faturamento total** de planos anuais separado por **auto renovação**?
+* **Pergunta 3:** Qual o **total de vendas** do **EA Play Season Pass**?
+* **Pergunta 4:** Qual o **total de vendas** do **Minecraft Season Pass**?
 
-## Perguntas de Negócio Respondidas
+---
 
-Pergunta 1: Qual o faturamento total de vendas de planos anuais?
-Pergunta 2: Qual o faturamento total de planos anuais separado por auto renovação?
-Pergunta 3: Total de vendas do EA Play Season Pass.
-Pergunta 4: Total de vendas do Minecraft Season Pass. [0120950e-6...22ed198c69 | Excel]
+### 🛠️ Instruções para Reprodução (Excel)
 
+Para replicar a análise e o Dashboard:
 
-## Instruções para Reprodução
-Para reproduzir este projeto no Excel:
+#### 1. Importar a Base de Dados
+* Certifique-se de que os dados da aba **Bases** estejam organizados em **formato de tabela** no Excel, facilitando a criação de Tabelas Dinâmicas.
 
-### Importar a base de dados:
-Certifique-se de que os dados estão organizados em formato de tabela.
-Use a aba Bases como fonte principal.
+#### 2. Criar Tabelas Dinâmicas
+* Insira **Tabelas Dinâmicas** na aba **Cálculos** para responder a cada pergunta de negócio.
+    * **Campos de Linhas:** Utilizar `Subscription Type` (para perguntas anuais) ou `Plan` (para visão geral).
+    * **Campos de Valores:** Utilizar a **Soma** de `Total Value` (para faturamento de planos) ou a **Soma** dos preços dos passes adicionais (para vendas dos passes).
+    * **Campos de Filtros:** Utilizar `Auto Renewal` (quando a segmentação for necessária, como na Pergunta 2).
 
-### Criar Tabelas Dinâmicas:
-Para responder às perguntas de negócio, insira tabelas dinâmicas:
+#### 3. Aplicar Segmentações de Dados
+* Utilize **Segmentações de Dados** (Slicers) conectadas às Tabelas Dinâmicas para permitir a filtragem interativa por:
+    * Tipo de plano (`Plan`).
+    * Período (`Start Date`).
+    * Auto renovação (`Auto Renewal`).
 
-#### Linhas: Subscription Type ou Plan
-#### Valores: Soma de Total Value ou preços dos passes adicionais.
-#### Filtros: Auto Renewal quando necessário.
+#### 4. Construir o Dashboard
+* Na aba **Dashboard**, construa a visualização consolidada utilizando:
+    * **Gráficos Dinâmicos** e **KPIs (Key Performance Indicators)** que se baseiam diretamente nos resultados das Tabelas Dinâmicas criadas na aba **Cálculos**.
+    * Aplique a **paleta de cores** e elementos visuais definidos na aba **Assets** para garantir a consistência e a **identidade visual**.
 
-### Aplicar Segmentações de Dados:
-Utilize segmentações para filtrar por tipo de plano, período ou auto renovação.
-
-### Construir o Dashboard:
-Use gráficos dinâmicos e KPIs com base nas tabelas dinâmicas.
-Aplique a paleta de cores definida na aba Assets para manter a identidade visual.
-
-### Atualização dos Dados:
-
-Defina o período de cálculo (ex.: 01/01/2024 a 31/12/2024).
-Atualize as tabelas dinâmicas e gráficos conforme novos dados forem inseridos.
+#### 5. Atualização dos Dados
+* **Defina o período de cálculo** (ex: 01/01/2024 a 31/12/2024) para as análises.
+* Configure as Tabelas Dinâmicas e Gráficos para serem **atualizados** conforme novos dados de assinatura forem inseridos na aba **Bases**.
